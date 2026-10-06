@@ -1,4 +1,4 @@
-# 🧹 Reliable Data Extraction
+# Reliable Data Extraction
 
 Part of [VO₂ & VO₂max Estimation](https://github.com/Sivanesh27/VO2-Estimation). This module turns raw wearable sessions into **clean, continuous, trustworthy segments** that the [prediction model](https://github.com/Sivanesh27/VO2-Estimation/tree/main/VO2%20and%20VO2max%20prediction%20model) can safely use.
 
@@ -6,11 +6,11 @@ Part of [VO₂ & VO₂max Estimation](https://github.com/Sivanesh27/VO2-Estimati
 
 ---
 
-## 🎯 Why this step matters
+## Why this step matters
 
 Wearable HR data is noisy: sensors lose contact, timestamps skip, and motion corrupts readings. Features such as HRmax, %HRR, HR recovery and HR–movement slope are only meaningful on reliable data, so this step runs **before** any feature extraction.
 
-## 📥 Inputs
+## Inputs
 
 | Signal | Used for |
 |---|---|
@@ -22,7 +22,7 @@ Wearable HR data is noisy: sensors lose contact, timestamps skip, and motion cor
 
 Data comes from **10 subjects**, with both *training* and *readiness* sessions.
 
-## 🔧 Pipeline
+## Pipeline
 
 ```mermaid
 flowchart TD
@@ -41,7 +41,7 @@ flowchart TD
 4. **Session segmentation**: separate training from readiness sessions and split long recordings into usable segments.
 5. **Smoothing**: a rolling median filter reduces spikes before physiological features are calculated.
 
-## 📤 Outputs
+## Outputs
 
 - Reliable, time-continuous HR + RMS segments per subject
 - Smoothed HR ready for HRmax, HRrest, %HRR, recovery and slope features
@@ -49,7 +49,7 @@ flowchart TD
 
 These outputs are the input to the [VO₂ and VO₂max prediction model](https://github.com/Sivanesh27/VO2-Estimation/tree/main/VO2%20and%20VO2max%20prediction%20model).
 
-## ▶️ How to run
+## How to run
 
 **Colab (easiest):** open the [segmentation notebook](https://colab.research.google.com/drive/12s0U2uDoph-irh3rMujlStkf3aZa_B4_?usp=sharing), upload the raw session files and run all cells.
 
@@ -65,7 +65,7 @@ jupyter notebook
 
 Then open the notebook from the `Reliable Data Extraction` folder and run it on your data.
 
-## ✅ Quality criteria at a glance
+## Quality criteria at a glance
 
 | Check | Goal |
 |---|---|
@@ -74,7 +74,7 @@ Then open the notebook from the `Reliable Data Extraction` folder and run it on 
 | Missing data | Segments with excessive gaps excluded |
 | Session type | Training and readiness handled separately |
 
-## 🔗 Related
+## Related
 
 - [Main README](https://github.com/Sivanesh27/VO2-Estimation#readme)
 - [Prediction model README](https://github.com/Sivanesh27/VO2-Estimation/tree/main/VO2%20and%20VO2max%20prediction%20model)
