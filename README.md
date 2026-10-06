@@ -136,12 +136,6 @@ Leave-One-Person-Out predictions vs. measured VO₂max (mean absolute difference
 | Sarabeshwar L | 50.6 | 52.9 | 2.3 | [Click here](https://drive.google.com/drive/folders/1X-CkOg5E6-bW_YsAAZAUPw_SZEde6SqY?usp=drive_link) | [Click here](https://drive.google.com/drive/folders/1X-CkOg5E6-bW_YsAAZAUPw_SZEde6SqY?usp=drive_link) |
 | Vignesh V | 56.3 | 52.6 | 3.7 | [Click here](https://drive.google.com/file/d/1jXQVhFvwyEEL7A9-vd_3EeuxP0NLOWCs/view?usp=drive_link) | [Click here](https://drive.google.com/drive/folders/11i2aO6KYR88_25blDmnMCEVcUcAEKx7-?usp=drive_link) |
 
-## ⚠️ Limitations and future work
-
-- **Tiny cohort (n = 10).** Results show the pipeline works end to end but are not clinically validated.
-- **Predictions are compressed.** Predicted values sit in a narrow band (≈ 52.5–53.6) while targets span 42.2–61.5, so the model currently captures the average well but separates low- and high-fitness athletes poorly. This is the main thing to improve.
-- Next steps: more subjects, additional sub-maximal reference tests, richer recovery and HR-kinetics features, and revisiting temporal models once continuous VO₂ ground truth exists.
-
 ## 📚 Documentation
 
 - 📄 [Project summary document (Google Doc)](https://docs.google.com/document/d/1iVSv0T32S8UnDJSDZ31XoRWubMcw7VvJZ_CcjniTnN4/edit?usp=drive_link): working, algorithm and results table
