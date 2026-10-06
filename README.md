@@ -7,13 +7,13 @@ Estimate a person's **VO₂max** (maximal oxygen uptake, a key measure of cardio
 ![Validation](https://img.shields.io/badge/Validation-Leave--One--Person--Out-orange)
 ![Subjects](https://img.shields.io/badge/Subjects-10-black)
 
-| 📄 Project document | 🔬 Segmentation notebook | 🤖 Prediction notebook |
+| Project document | Segmentation notebook | Prediction notebook |
 |:---:|:---:|:---:|
 | [Google Doc](https://docs.google.com/document/d/1iVSv0T32S8UnDJSDZ31XoRWubMcw7VvJZ_CcjniTnN4/edit?usp=drive_link) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/12s0U2uDoph-irh3rMujlStkf3aZa_B4_?usp=sharing) | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1xG61bwV37L5DtPnkZ7q37d2pUNbLI3i_?usp=sharing) |
 
 ---
 
-## 📌 Table of Contents
+## Table of Contents
 1. [Overview](#-overview)
 2. [How it works](#-how-it-works)
 3. [Repository structure](#-repository-structure)
@@ -26,7 +26,7 @@ Estimate a person's **VO₂max** (maximal oxygen uptake, a key measure of cardio
 
 ---
 
-## 🔎 Overview
+## Overview
 
 The dataset contains **training and readiness sessions from 10 subjects**, with:
 
@@ -40,7 +40,7 @@ VO₂max is only available as a **single subject-level label** (no continuous VO
 1. **Reliable data extraction**: find trustworthy HR/movement segments in raw sessions.
 2. **VO₂ / VO₂max prediction**: combine a physiological formula with a small, regularised ML model.
 
-## ⚙️ How it works
+## How it works
 
 ```mermaid
 flowchart LR
@@ -53,7 +53,7 @@ flowchart LR
     F --> G["VO₂(t) from VO₂max + %HRR"]
 ```
 
-## 📁 Repository structure
+## Repository structure
 
 ```
 VO2-Estimation/
@@ -69,7 +69,7 @@ VO2-Estimation/
 | [`Reliable Data Extraction`](https://github.com/Sivanesh27/VO2-Estimation/tree/main/Reliable%20Data%20Extraction) | Turns raw sessions into clean, continuous, high-quality segments | [README](https://github.com/Sivanesh27/VO2-Estimation/tree/main/Reliable%20Data%20Extraction#readme) |
 | [`VO2 and VO2max prediction model`](https://github.com/Sivanesh27/VO2-Estimation/tree/main/VO2%20and%20VO2max%20prediction%20model) | Builds features and predicts VO₂max and VO₂(t) | [README](https://github.com/Sivanesh27/VO2-Estimation/tree/main/VO2%20and%20VO2max%20prediction%20model#readme) |
 
-## 🛠️ Setup
+## Setup
 
 ### Option A: Google Colab (zero install)
 Click the Colab badges at the top of this page. Upload your data when prompted and run the cells top to bottom.
@@ -96,13 +96,13 @@ jupyter notebook
 
 > The Colab notebooks are the reference implementation. If you export them as `.ipynb` or `.py` into the folders above, the same commands apply.
 
-## 🚀 Quick start
+## Quick start
 
 1. Open the **segmentation** notebook (or the `Reliable Data Extraction` folder) and run it on your raw sessions to produce reliable segments.
 2. Open the **prediction** notebook (or the `VO2 and VO2max prediction model` folder), point it at the extracted segments plus the subject table (age, sex, height, weight, VO₂max label) and run all cells.
 3. Review the per-subject outputs and the Leave-One-Person-Out summary.
 
-## 🧠 Method summary
+## Method summary
 
 | Step | What happens |
 |---|---|
@@ -119,7 +119,7 @@ jupyter notebook
 
 **Why not a TCN?** With about 10 independent labelled subjects and no time-aligned continuous VO₂, a deep temporal network would overfit. A regularised residual model on physiologically meaningful features is the safer choice.
 
-## 📊 Results
+## Results
 
 Leave-One-Person-Out predictions vs. measured VO₂max (mean absolute difference across the 10 subjects ≈ **5.82 ml/kg/min**):
 
@@ -136,13 +136,13 @@ Leave-One-Person-Out predictions vs. measured VO₂max (mean absolute difference
 | Sarabeshwar L | 50.6 | 52.9 | 2.3 | [Click here](https://drive.google.com/drive/folders/1X-CkOg5E6-bW_YsAAZAUPw_SZEde6SqY?usp=drive_link) | [Click here](https://drive.google.com/drive/folders/1X-CkOg5E6-bW_YsAAZAUPw_SZEde6SqY?usp=drive_link) |
 | Vignesh V | 56.3 | 52.6 | 3.7 | [Click here](https://drive.google.com/file/d/1jXQVhFvwyEEL7A9-vd_3EeuxP0NLOWCs/view?usp=drive_link) | [Click here](https://drive.google.com/drive/folders/11i2aO6KYR88_25blDmnMCEVcUcAEKx7-?usp=drive_link) |
 
-## 📚 Documentation
+## Documentation
 
-- 📄 [Project summary document (Google Doc)](https://docs.google.com/document/d/1iVSv0T32S8UnDJSDZ31XoRWubMcw7VvJZ_CcjniTnN4/edit?usp=drive_link): working, algorithm and results table
-- 🔬 [Segmentation Colab](https://colab.research.google.com/drive/12s0U2uDoph-irh3rMujlStkf3aZa_B4_?usp=sharing)
-- 🤖 [Prediction Colab](https://colab.research.google.com/drive/1xG61bwV37L5DtPnkZ7q37d2pUNbLI3i_?usp=sharing)
-- 🗂️ [Reliable Data Extraction README](https://github.com/Sivanesh27/VO2-Estimation/tree/main/Reliable%20Data%20Extraction)
-- 🗂️ [Prediction model README](https://github.com/Sivanesh27/VO2-Estimation/tree/main/VO2%20and%20VO2max%20prediction%20model)
+- [Project summary document (Google Doc)](https://docs.google.com/document/d/1iVSv0T32S8UnDJSDZ31XoRWubMcw7VvJZ_CcjniTnN4/edit?usp=drive_link): working, algorithm and results table
+- [Segmentation Colab](https://colab.research.google.com/drive/12s0U2uDoph-irh3rMujlStkf3aZa_B4_?usp=sharing)
+- [Prediction Colab](https://colab.research.google.com/drive/1xG61bwV37L5DtPnkZ7q37d2pUNbLI3i_?usp=sharing)
+- [Reliable Data Extraction README](https://github.com/Sivanesh27/VO2-Estimation/tree/main/Reliable%20Data%20Extraction)
+- [Prediction model README](https://github.com/Sivanesh27/VO2-Estimation/tree/main/VO2%20and%20VO2max%20prediction%20model)
 
 ---
 <sub>Repository: [https://github.com/Sivanesh27/VO2-Estimation](https://github.com/Sivanesh27/VO2-Estimation)</sub>
