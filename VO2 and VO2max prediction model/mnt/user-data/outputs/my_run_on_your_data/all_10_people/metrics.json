@@ -1,0 +1,78 @@
+{
+  "selected_model": "prior_calibrated",
+  "n_people": 10,
+  "features": [
+    "uth_vo2max",
+    "rhr",
+    "hrmax",
+    "hrr_high",
+    "hrr_low",
+    "hr_motion_slope",
+    "hr_recovery_60",
+    "ln_rmssd",
+    "age",
+    "sex",
+    "bmi"
+  ],
+  "leave_one_person_out": {
+    "prior_calibrated": {
+      "MAE": 8.3575,
+      "RMSE": 10.3376,
+      "R2": -1.689,
+      "bias": -1.6964
+    },
+    "prior_uth": {
+      "MAE": 7.0063,
+      "RMSE": 10.5127,
+      "R2": -1.7809,
+      "bias": -3.798
+    },
+    "prior+ridge": {
+      "MAE": 9.688,
+      "RMSE": 13.3893,
+      "R2": -3.5109,
+      "bias": -3.3491
+    }
+  },
+  "reference_always_predict_mean": {
+    "MAE": 5.769999999999999,
+    "RMSE": 6.304133564574912,
+    "R2": 0.0,
+    "bias": 5.684341886080802e-15
+  },
+  "selected_model_fit_on_all_people_OPTIMISTIC": {
+    "MAE": 5.816211756477317,
+    "RMSE": 6.297047212467481,
+    "R2": 0.002246896967083134,
+    "bias": -0.0016269711014416544
+  },
+  "label_stats": {
+    "mean": 52.830000000000005,
+    "std": 6.304133564574912,
+    "min": 42.2,
+    "max": 61.5
+  },
+  "config": {
+    "max_gap_s": 6.0,
+    "hr_smooth_win": 5,
+    "hrmax_percentile": 99.5,
+    "rest_percentile": 20.0,
+    "vo2_rest": 3.5,
+    "rms_high": 90.0,
+    "rms_low": 20.0,
+    "recovery_samples": 20,
+    "recovery_min_pct_hrr": 0.6,
+    "recovery_max_rms": 40.0,
+    "min_recovery_events": 3,
+    "n_augment": 20,
+    "seed": 42,
+    "ridge_alphas": [
+      0.1,
+      1,
+      10,
+      100,
+      1000,
+      10000
+    ]
+  }
+}

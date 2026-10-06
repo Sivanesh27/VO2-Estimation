@@ -1,0 +1,11 @@
+person_id,true_vo2max,pred_prior_uth,pred_prior_calibrated,pred_prior+ridge,abs_error_best
+Ajay D,59.4,56.53,50.7,57.19,8.7
+Akash Raj,57.0,53.56,51.92,51.36,5.08
+Gokul Krishna,47.1,52.47,53.46,55.83,6.36
+Jayaraman T,58.8,53.58,51.63,55.5,7.17
+Manoj Kumar S,45.4,52.44,53.7,54.72,8.3
+Mithra M R,50.0,42.57,53.79,49.93,3.79
+Nirmal Kumar,61.5,31.61,36.69,34.46,24.81
+Sarabeshwar L,50.6,46.54,53.23,53.39,2.63
+Vignesh V,56.3,55.19,51.78,29.37,4.52
+Yuvan Shravan S,42.2,45.83,54.42,53.06,12.22
