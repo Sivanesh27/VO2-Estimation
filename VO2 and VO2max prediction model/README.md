@@ -1,4 +1,4 @@
-# 🤖 VO₂ and VO₂max Prediction Model
+# VO₂ and VO₂max Prediction Model
 
 Part of [VO₂ & VO₂max Estimation](https://github.com/Sivanesh27/VO2-Estimation). This module builds physiological and movement features from reliable segments and predicts **VO₂max** (per subject) and **VO₂(t)** (over time).
 
@@ -8,7 +8,7 @@ Part of [VO₂ & VO₂max Estimation](https://github.com/Sivanesh27/VO2-Estimati
 
 ---
 
-## 🧭 Approach in one line
+## Approach in one line
 
 ```
 Predicted VO₂max = Uth VO₂max + Ridge-predicted residual
@@ -17,7 +17,7 @@ VO₂(t)           = f(VO₂max, %HRR(t))
 
 A known physiological formula does the heavy lifting; a small regularised ML model only learns the **correction**. This suits a dataset of ~10 labelled subjects.
 
-## 🧬 Features (~11 subject-level)
+## Features (~11 subject-level)
 
 | Group | Feature | Definition / note |
 |---|---|---|
@@ -31,7 +31,7 @@ A known physiological formula does the heavy lifting; a small regularised ML mod
 | HRV | `ln(RMSSD)` | From readiness data; log reduces skew |
 | Demographics | Age, sex, BMI | BMI from height and weight |
 
-## 🧪 Models
+## Models
 
 | Model | Role |
 |---|---|
@@ -48,11 +48,11 @@ HR + Movement + HRV + Demographics  →  VO₂max
 VO₂max + %HRR                       →  VO₂(t)
 ```
 
-## ✅ Validation: Leave-One-Person-Out (LOPO)
+## Validation: Leave-One-Person-Out (LOPO)
 
 Each subject is held out entirely once; the model trains on the other 9 and predicts the held-out person. This measures **generalisation to a new person** and avoids leakage from sessions of the same individual.
 
-## 📊 Results
+## Results
 
 Mean absolute difference across the 10 subjects ≈ **5.82 ml/kg/min**.
 
@@ -71,7 +71,7 @@ Mean absolute difference across the 10 subjects ≈ **5.82 ml/kg/min**.
 
 **Reading these results honestly:** predictions fall in a narrow range (≈ 52.5–53.6) while targets range from 42.2 to 61.5. The model is near the cohort mean for everyone, so it under-predicts high-fitness athletes (e.g. Nirmal Kumar, Jayaraman T, Ajay D) and over-predicts lower-fitness ones (e.g. Yuvan Shravan S). More subjects and stronger fitness-discriminating features are the next steps.
 
-## ▶️ How to run
+## How to run
 
 **Colab:** open the [prediction notebook](https://colab.research.google.com/drive/1xG61bwV37L5DtPnkZ7q37d2pUNbLI3i_?usp=sharing), upload the extracted segments and the subject table (age, sex, height, weight, VO₂max label), then run all cells.
 
@@ -87,13 +87,13 @@ jupyter notebook
 
 Open the notebook in the `VO2 and VO2max prediction model` folder and run all cells.
 
-## 📤 Outputs
+## Outputs
 
 - Predicted VO₂max per subject (with LOPO evaluation)
 - Sequential VO₂(t) series per subject
 - Full model prediction outputs (see the table links above)
 
-## 🔗 Related
+## Related
 
 - [Main README](https://github.com/Sivanesh27/VO2-Estimation#readme)
 - [Reliable Data Extraction README](https://github.com/Sivanesh27/VO2-Estimation/tree/main/Reliable%20Data%20Extraction)
