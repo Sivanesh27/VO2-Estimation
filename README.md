@@ -1,4 +1,4 @@
-# 🫀 VO₂ & VO₂max Estimation from Wearable Heart-Rate Data
+# VO₂ & VO₂max Estimation from Wearable Heart-Rate Data
 
 Estimate a person's **VO₂max** (maximal oxygen uptake, a key measure of cardiorespiratory fitness) and a **time-varying VO₂(t)** from everyday wearable signals: heart rate, accelerometer movement and readiness HRV. No lab treadmill test needed at inference time.
 
